@@ -55,11 +55,15 @@ GEM
       tzinfo-data
     apophenia_field_dictionary_core (2.1.0)
     apophenia_field_dictionary_rails (0.1.0)
+    archive-zip (0.12.0)
+      io-like (~> 0.3.0)
     arel (9.0.0)
     ast (2.4.0)
     autoprefixer-rails (9.5.1.1)
       execjs
     bindex (0.7.0)
+    bootsnap (1.4.4)
+      msgpack (~> 1.0)
     brakeman (4.5.1)
     builder (3.2.3)
     byebug (11.0.1)
@@ -73,6 +77,9 @@ GEM
       xpath (~> 3.2)
     childprocess (1.0.1)
       rake (< 13.0)
+    chromedriver-helper (2.1.1)
+      archive-zip (~> 0.10)
+      nokogiri (~> 1.8)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
     diff-lcs (1.3)
@@ -153,6 +160,7 @@ GEM
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
+    io-like (0.3.0)
     jaro_winkler (1.5.2)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
@@ -183,6 +191,7 @@ GEM
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
+    msgpack (1.2.10)
     multipart-post (2.1.1)
     mustache (1.1.0)
     mysql2 (0.5.2)
@@ -313,6 +322,9 @@ GEM
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
+    turbolinks (5.2.0)
+      turbolinks-source (~> 5.2)
+    turbolinks-source (5.2.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     tzinfo-data (1.2019.1)
@@ -348,9 +360,11 @@ PLATFORMS
 DEPENDENCIES
   apophenia-rails-logger!
   autoprefixer-rails
+  bootsnap (>= 1.1.0)
   brakeman
   byebug
   capybara (~> 3.20)
+  chromedriver-helper
   dotenv-rails
   dr_theme!
   dungeon_master!
@@ -367,9 +381,11 @@ DEPENDENCIES
   ramsey_validators!
   rspec-rails
   sassc-rails
+  selenium-webdriver
   sla!
   spring
   spring-watcher-listen (~> 2.0.0)
+  turbolinks (~> 5)
   uglifier (~> 4.1)
   web-console (>= 3.3.0)
   webdrivers (~> 3.9)
