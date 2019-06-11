@@ -1,15 +1,29 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem "jbuilder", "~> 2.9"
-gem "mysql2"
-gem "newrelic_rpm"
-gem "puma", "~> 3.12"
-gem "rails", "~> 5.2.3"
-gem "webpacker", "~> 4.0"
+ruby '2.4.0'
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 5.2.3'
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3'
+# Use Puma as the app server
+gem 'puma', '~> 3.11'
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 5.0'
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
+# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+gem 'webpacker'
+# See https://github.com/rails/execjs#readme for more supported runtimes
+# gem 'mini_racer', platforms: :ruby
+
+# Use CoffeeScript for .coffee assets and views
+gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -24,32 +38,9 @@ gem 'turbolinks', '~> 5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-source "https://zLH3cwetWybYGw1DXp4H@gem.fury.io/lampogroup/" do
-  gem "apophenia-rails-logger"
-  gem "dungeon_master"
-  gem "email"
-  gem "gazelle"
-  gem "dr_theme"
-  gem "rails_access_control_engine"
-  gem "ramsey_validators"
-  gem "sla"
-end
-
-group :development, :test, :build do
-  gem "autoprefixer-rails"
-  gem "sassc-rails"
-  gem "uglifier", "~> 4.1"
-end
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem "brakeman"
-  gem "byebug", platforms: %i(mri mingw x64_mingw)
-  gem "capybara", "~> 3.20"
-  gem "dotenv-rails"
-  gem "ramsey_cop", "~> 0.14", source: "https://rubygems.org"
-  gem "rspec-rails"
-  gem "webdrivers", "~> 3.9"
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
@@ -62,7 +53,12 @@ group :development do
 end
 
 group :test do
+  # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
